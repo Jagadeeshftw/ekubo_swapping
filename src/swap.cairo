@@ -44,7 +44,6 @@ pub mod swap {
                 pool_key, params, caller,
             } = ekubo::components::shared_locker::consume_callback_data::<SwapData>(core, data);
             let delta = core.swap(pool_key, params);
-            println!("Delta: {:?}", delta);
             ekubo::components::shared_locker::handle_delta(
                 core, pool_key.token0, delta.amount0, caller,
             );
